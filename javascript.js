@@ -65,12 +65,12 @@
 function getRowsDesired() {
     // console.log(Number(document.querySelector('.rows input#rows').value))
     // console.log(Number(document.querySelectorAll('.rows input')[0].value))
-    console.log(Number(document.getElementById('rows').value))
+    // console.log(Number(document.getElementById('rows').value))
     return Number(document.getElementById('rows').value);
 }
 
 function getColumnsDesired() {
-    console.log(Number(document.getElementById('cols').value))
+    // console.log(Number(document.getElementById('cols').value))
     return Number(document.getElementById('cols').value)
 }
 
@@ -95,8 +95,8 @@ function createWithHtmlTable(rows, cols) {
     } else {
         string = 'Provide some inputs'
     }
-    document.getElementById("output").innerHTML = string;
-
+    document.querySelector("section.container > section#output").innerHTML = string
+    // document.getElementById("output").innerHTML = string;
 }
 // createWithHtmlTable ()
 

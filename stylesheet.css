@@ -8,14 +8,28 @@ section.container {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    border: 5px skyblue dashed;
 
-    button#generate {
-        background-color: pink;
+    h1, h3 {
+        font-family: Thonburi;
     }
 
     .generate-box {
         display: flex;
         gap: 10px;
+
+        button {
+            background-color: lightblue;
+            border: dashed 5px skyblue;
+        }
+
+        button:active {
+            background-color: indianred; /* Changes on click */
+            position: relative;
+            top: 2px; /* Creates a slight "pressed" effect */
+            border: 5px solid darkred;
+
+        }
 
     .inputs {
             display: flex;
@@ -27,7 +41,23 @@ section.container {
                 display: flex;
                 gap: 10px;
                 justify-content: space-between;
+                color: hotpink
+            }
+        }
+    }
 
+    #output {
+        overflow: scroll;
+        max-width: 90vw;
+        max-height: 60vh;
+
+        table {
+            border: 2px dashed darkseagreen;
+            border-collapse: collapse;
+
+            td {
+                padding: 2px;
+                text-align: center;
             }
         }
     }

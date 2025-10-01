@@ -3,15 +3,18 @@ section.container {
     height: 100vh;
     margin: 0 auto;
     color: hotpink;
+    border-radius: 75px;
+
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     border: 5px skyblue dashed;
+    background-color: lavenderblush;
 
     h1, h3 {
-        font-family: Thonburi;
+        font-family: "Andale Mono", monospace;
     }
 
     .generate-box {
@@ -19,15 +22,22 @@ section.container {
         gap: 10px;
 
         button {
-            background-color: lightblue;
-            border: dashed 5px skyblue;
+            background-color: hotpink;
+            border: none;
+            font-size: 300%;
+            border-radius: 10px;
+            padding: 0px 20px 0px 20px;
+        }
+
+        button:hover {
+            background-color:deeppink;
+            position: relative;
         }
 
         button:active {
-            background-color: indianred; /* Changes on click */
+            background-color: darkseagreen; /* Changes on click */
             position: relative;
             top: 2px; /* Creates a slight "pressed" effect */
-            border: 5px solid darkred;
 
         }
 
@@ -51,14 +61,25 @@ section.container {
         max-width: 90vw;
         max-height: 60vh;
 
-        table {
-            border: 2px dashed darkseagreen;
+        table, th, td {
+            border: 1px solid mediumpurple;
             border-collapse: collapse;
+
+            .highlight {
+                background-color: mediumpurple;
+            }
 
             td {
                 padding: 2px;
                 text-align: center;
             }
+            td:first-of-type, td:last-of-type {
+                background-color: lavender;
+            }
+            tr:first-of-type, tr:last-of-type {
+                background-color: lavender;
+            }
+
         }
     }
 }

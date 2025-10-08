@@ -1,52 +1,52 @@
-function getRowsDesired() {
-    return Number(document.getElementById('rows').value);
-}
-
-function getColumnsDesired() {
-    return Number(document.getElementById('cols').value);
-}
-
-function getHighlightValue() {
-    let highlightValue = document.getElementById('highlight').value;
-    if (highlightValue !== '') {
-        return Number(highlightValue);
-    }
-}
-
 function createWithHtmlTable(rows, cols, highlight) {
-    let string;
-    if (rows && cols) {
-        string = "<table>\n";
+    let string
+    if (rows && cols) { // if rows/columns are provided
+        string = "<table>\n" // build table
 
         for (let row = 1; row <= rows; row++) {
             if (highlight && highlight === row) {
-                string += "<tr class='highlight'>\n";
+                string += "<tr class='highlight'>\n"
             } else {
-                string += "<tr>\n";
+                string += "<tr>\n" // start row
             }
-
             for (let col = 1; col <= cols; col++) {
-                string += "<td>";
-                string += row * col;
-                string += "</td>\n";
-            }
-            string += "</tr>\n";
-        }
+                if (highlight && highlight === col) {
+                    string += "<td class='highlight'>\n"
+                } else {
+                    string += "<td>" // start cell
+                }
 
-        string += "</table>\n";
+                string += row * col // content
+                string += "</td>\n" // end cell
+            }
+            string += "</tr>\n" // end row
+        }
+        string += "</table>\n" // end table
     } else {
-        string = '⚠️ Please enter both rows and columns!';
+        string = 'Provide some inputs'
     }
 
     document.getElementById('output').innerHTML = string;
 }
 
-function generateTable() {
-    const rows = getRowsDesired();
-    const cols = getColumnsDesired();
-    const highlight = getHighlightValue();
-    createWithHtmlTable(rows, cols, highlight);
+// this method can be used to replace the 3 duplicates above = less code
+function getInputValueAsNumber(inputId) {
+    if (document.getElementById(inputId).value !== null) {
+        return Number(document.getElementById(inputId).value)
+    } else {
+        console.log(`Sorry, value isn\'t present for this ID: `, inputId)
+    }
+
+    console.log(`Sorry, couldn\'t find this ID: `, inputId)
 }
+
+// getRowsDesired() is equivalent to getInputAsNumber("rows")
+// getColsDesired() is equivalent to getInputAsNumber("cols")
+// getHighlightDesired() is equivalent to getInputAsNumber("highlight")
+//
+console.log(`should get value of rows input: `, getInputValueAsNumber('rows'));
+console.log(`should get value of cols input:`, getInputValueAsNumber('cols'));
+console.log(`should get value of highlight input:`, getInputValueAsNumber('highlight'));
 
 
 

@@ -26,7 +26,7 @@ section.container {
             border: none;
             font-size: 300%;
             border-radius: 10px;
-            padding: 0px 20px 0px 20px;
+            padding: 0 20px 0 20px;
         }
 
         button:hover {
@@ -62,25 +62,33 @@ section.container {
         max-width: 90vw;
         max-height: 60vh;
 
-        table, th, tr, td{
-            border: 1px solid mediumpurple;
-            border-collapse: collapse;
+        table, th, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse; /* Optional: to avoid double borders */
+
+            tr:first-of-type,
+            tr:last-of-type {
+                background-color: lightblue;
+            }
 
             .highlight {
                 background-color: mediumpurple;
+                color: white;
             }
 
             td {
-                padding: 4px;
+                padding: 2px;
                 text-align: center;
-            }
-            td:first-of-type, td:last-of-type {
-                background-color: lavender;
-            }
-            tr:first-of-type, tr:last-of-type {
-                background-color: lavender;
-            }
 
+                &:first-of-type,
+                &:last-of-type {
+                    background-color: lightblue;
+                }
+            }
+        }
+
+        tr:hover {
+            background-color: deepskyblue;
         }
     }
 }

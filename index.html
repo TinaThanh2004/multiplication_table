@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Multiplication Table R</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
 
@@ -18,25 +18,16 @@
                 <input id="rows" type="number" value="10"  placeholder="How many rows?"/>
             </label>
 
-            <label for="cols" class="cols">Columns:
+            <label for="cols">Columns:
                 <input id="cols" type="number" value="10"  placeholder="How many columns?"/>
             </label>
-
-            <label for="highlight" class="highlight">Highlight:
-                <input id="highlight" type="number" placeholder="Highlight row & column!"/>
+            <label for="highlight">Highlight:
+                <input id="highlight" type="number">
             </label>
-
-<!--            <label for="highlight">Highlight: my old one-->
-<!--                <input id="highlight" type="number" placeholder="Highlight row & column?"/>-->
-<!--            </label>-->
-
         </div>
-
-        <button id="generate" onclick="createWithHtmlTable(getRowsDesired(), getColumnsDesired(), getHighlightValue())"> &#x1F422</button>
+        <button id="generate" onclick="createWithHtmlTable(getInputValueAsNumber('rows'), getInputValueAsNumber('cols'), getInputValueAsNumber('highlight'))">&#x1F422</button>
     </div>
-
     <div id="output"></div>
-<!--    <section id="output"></section>-->
 </section>
 
 </body>

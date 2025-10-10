@@ -1,85 +1,123 @@
-section.container {
-    width: 70vw;
-    height: 100vh;
-    margin: 0 auto;
-    color: hotpink;
-    border-radius: 75px;
+/*section.container {*/
+/*    width: 70vw;*/
+/*    height: 100vh;*/
+/*    margin: 0 auto;*/
+/*    color: hotpink;*/
+/*    border-radius: 75px;*/
 
 
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    gap: 10px;*/
+/*    border: 5px skyblue dashed;*/
+/*    background-color: lavenderblush;*/
+
+/*    h1, h3 {*/
+/*        font-family: "Andale Mono", monospace;*/
+/*    }*/
+
+/*    .generate-box {*/
+/*        display: flex;*/
+/*        gap: 10px;*/
+
+/*        button {*/
+/*            background-color: hotpink;*/
+/*            border: none;*/
+/*            font-size: 300%;*/
+/*            border-radius: 10px;*/
+/*            padding: 0px 20px 0px 20px;*/
+/*        }*/
+
+/*        button:hover {*/
+/*            background-color:deeppink;*/
+/*            position: relative;*/
+/*        }*/
+
+/*        button:active {*/
+/*            background-color: darkseagreen; !* Changes on click *!*/
+/*            position: relative;*/
+/*            top: 2px; !* Creates a slight "pressed" effect *!*/
+
+/*        }*/
+
+/*    .inputs {*/
+/*            display: flex;*/
+/*            flex-direction: column;*/
+/*            gap: 5px;*/
+
+
+/*            label {*/
+/*                display: flex;*/
+/*                gap: 10px;*/
+/*                justify-content: space-between;*/
+/*                color: hotpink*/
+/*            }*/
+/*        }*/
+/*    }*/
+
+/*    #output {*/
+/*        overflow: scroll;*/
+/*        max-width: 90vw;*/
+/*        max-height: 60vh;*/
+
+/*        table, th, td {*/
+/*            border: 1px solid mediumpurple;*/
+/*            border-collapse: collapse;*/
+
+/*            .highlight {*/
+/*                background-color: mediumpurple;*/
+/*            }*/
+
+/*            td {*/
+/*                padding: 2px;*/
+/*                text-align: center;*/
+/*            }*/
+/*            td:first-of-type, td:last-of-type {*/
+/*                background-color: lavender;*/
+/*            }*/
+/*            tr:first-of-type, tr:last-of-type {*/
+/*                background-color: lavender;*/
+/*            }*/
+
+/*        }*/
+/*    }*/
+/*}*/
+#output {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    max-width: 90vw;
+    max-height: 60vh;
+}
+
+.flex-table {
+    display: flex;
+    flex-direction: column; /* stack rows vertically */
+    gap: 2px;
+}
+
+.flex-table .row {
+    display: flex; /* each row lays out its cells horizontally */
+    gap: 2px;
+}
+
+.flex-table .cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    border: 5px skyblue dashed;
-    background-color: lavenderblush;
+    border: 1px solid black;
+    background-color: lavender;
+}
 
-    h1, h3 {
-        font-family: "Andale Mono", monospace;
-    }
+.flex-table .highlight {
+    background-color: mediumpurple;
+    color: white;
+}
 
-    .generate-box {
-        display: flex;
-        gap: 10px;
-
-        button {
-            background-color: hotpink;
-            border: none;
-            font-size: 300%;
-            border-radius: 10px;
-            padding: 0px 20px 0px 20px;
-        }
-
-        button:hover {
-            background-color:deeppink;
-            position: relative;
-        }
-
-        button:active {
-            background-color: darkseagreen; /* Changes on click */
-            position: relative;
-            top: 2px; /* Creates a slight "pressed" effect */
-
-        }
-
-    .inputs {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-
-            label {
-                display: flex;
-                gap: 10px;
-                justify-content: space-between;
-                color: hotpink
-            }
-        }
-    }
-
-    #output {
-        overflow: scroll;
-        max-width: 90vw;
-        max-height: 60vh;
-
-        table, th, td {
-            border: 1px solid mediumpurple;
-            border-collapse: collapse;
-
-            .highlight {
-                background-color: mediumpurple;
-            }
-
-            td {
-                padding: 2px;
-                text-align: center;
-            }
-            td:first-of-type, td:last-of-type {
-                background-color: lavender;
-            }
-            tr:first-of-type, tr:last-of-type {
-                background-color: lavender;
-            }
-
-        }
-    }
+.flex-table .row:hover {
+    background-color: deepskyblue;
 }

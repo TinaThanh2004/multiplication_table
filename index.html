@@ -1,35 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multiplication Table</title>
-    <link rel="stylesheet" href="/stylesheet.css">
-</head>
-<body>
 
-<section class="container">
+    <style>
+        section {
+            width: 70vw;
+            height: 100vh;
+            margin: 0 auto;
+            color: hotpink;
+            border-radius: 75px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 5px skyblue dashed;
+            background-color: lavenderblush;
+
+            & h1,
+            & h3 {
+                font-family: "Andale Mono", monospace;
+            }
+
+            & .generate-box {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                & button {
+                    background-color: hotpink;
+                    border: none;
+                    font-size: 300%;
+                    border-radius: 10px;
+                    padding: 0 20px;
+                    cursor: pointer;
+                }
+
+                & button:hover {
+                    background-color: deeppink;
+                }
+
+                & button:active {
+                    background-color: darkseagreen;
+                    position: relative;
+                    top: 2px;
+                }
+
+                & .inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    & label {
+                        display: flex;
+                        gap: 10px;
+                        justify-content: space-between;
+                        color: hotpink;
+                    }
+                }
+            }
+
+            & #output {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                overflow: auto;
+                max-width: 90vw;
+                max-height: 60vh;
+
+                & table,
+                & th,
+                & tr,
+                & td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+
+                & tr:first-of-type,
+                & tr:last-of-type {
+                    background-color: lightblue;
+                }
+
+                & .highlight {
+                    background-color: mediumpurple;
+                    color: white;
+                }
+
+                & td {
+                    padding: 2px;
+                    text-align: center;
+                }
+
+                & td:first-of-type,
+                & td:last-of-type {
+                    background-color: lightblue;
+                }
+
+                & tr:hover {
+                    background-color: deepskyblue;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+<section>
     <h1>Multiplication Table</h1>
     <h3>Create your own multiplication table that is rendered with an HTML table!</h3>
 
     <div class="generate-box">
         <div class="inputs">
-            <label for="rows" class="rows">Rows:
-                <input id="rows" type="number" value="10"  placeholder="How many rows?"/>
+            <label for="rows" class="columns-of-rows">Rows:
+                <input id="rows" type="number" value="10" placeholder="How many rows?" />
             </label>
 
-            <label for="cols">Columns:
-                <input id="cols" type="number" value="10"  placeholder="How many columns?"/>
+            <label for="cols" class="rows-of-columns">Columns:
+                <input id="cols" type="number" value="10" placeholder="How many columns?" />
             </label>
+
             <label for="highlight">Highlight:
-                <input id="highlight" type="number">
+                <input id="highlight" type="number" />
             </label>
         </div>
-        <button id="generate" onclick="createWithHtmlTable(getInputValueAsNumber('rows'), getInputValueAsNumber('cols'), getInputValueAsNumber('highlight'))">&#x1F422</button>
+
+        <button id="generate" onclick="createWithFlexbox(getInputValueAsNumber('rows'),getInputValueAsNumber('cols'),getInputValueAsNumber('highlight'))">&#x1F422</button>
+
+
     </div>
+
     <div id="output"></div>
 </section>
 
-</body>
 <script src="javascript.js"></script>
+</body>
 </html>
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Multiplication Table</title>-->
+<!--    <link rel="stylesheet" href="/stylesheet.css">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<section class="container">-->
+<!--    <h1>Multiplication Table</h1>-->
+<!--    <h3>Create your own multiplication table that is rendered with an HTML table!</h3>-->
+
+<!--    <div class="generate-box">-->
+<!--        <div class="inputs">-->
+<!--            <label for="rows" class="rows">Rows:-->
+<!--                <input id="rows" type="number" value="10"  placeholder="How many rows?"/>-->
+<!--            </label>-->
+
+<!--            <label for="cols">Columns:-->
+<!--                <input id="cols" type="number" value="10"  placeholder="How many columns?"/>-->
+<!--            </label>-->
+<!--            <label for="highlight">Highlight:-->
+<!--                <input id="highlight" type="number">-->
+<!--            </label>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <button id="generate" onclick="createWithHtmlTable(getInputValueAsNumber('rows'), getInputValueAsNumber('cols'), getInputValueAsNumber('highlight'))">&#x1F422</button>&ndash;&gt;-->
+<!--        <button id="generate" onclick="createWithFlexbox(getInputValueAsNumber('rows'),getInputValueAsNumber('cols'),getInputValueAsNumber('highlight'))">&#x1F422</button>-->
+
+
+<!--    </div>-->
+<!--    <div id="output"></div>-->
+<!--</section>-->
+
+<!--</body>-->
+<!--<script src="javascript.js"></script>-->
+<!--</html>-->

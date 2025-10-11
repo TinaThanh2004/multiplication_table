@@ -72,7 +72,7 @@ section.container {
             }
 
             .highlight {
-                background-color: mediumpurple;
+                background-color: mediumpurple !important;;
                 color: white;
             }
 

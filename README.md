@@ -1,10 +1,16 @@
-# Hello there?
+# Hi, I'm Tina Nguyen 🎨
 
-### I am not ready to learn
+I’m an artist and graphic designer who loves creating **artwork, ceramics, and paintings**.  
+My style is all about **cute, playful illustrations** and finding beauty in the little things *(literally)*. ✨
 
-Lalallala bleep bloop i learn 
+## 💖 Interests
+- Making artwork and ceramics 
+- Snowboarding 🏂 & Badminton! 🏸
+- Cute and playful illustration
+- Turtles 🐢
 
-1. I learn Html!
-2. I learn CSS and learn how to make button look like a button with hover and active
-3. DOM elements as it fades from my memory
-4. Javascript with a lot of variables and methods and console stuff
+## 🎯 What I’m Learning
+- Using GitHub
+- Building or I guess coding a website aka multiplication table online
+- Javascript
+

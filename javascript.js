@@ -4,15 +4,18 @@ function createWithFlexbox(rows, cols, highlight) {
         string = "<div class='flex-table'>\n";
 
         for (let row = 1; row <= rows; row++) {
-            string += highlight && highlight === row
-                ? "<div class='row highlight'>\n"
-                : "<div class='row'>\n";
+            if (highlight && highlight === row) {
+                string += "<div class='row highlight'>\n";
+            } else {
+                string += "<div class='row'>\n";
+            }
 
             for (let col = 1; col <= cols; col++) {
-                string += highlight && highlight === col
-                    ? "<div class='cell highlight'>"
-                    : "<div class='cell'>";
-
+                if (highlight && highlight === col) {
+                    string += "<div class='cell highlight'>";
+                } else {
+                    string += "<div class='cell'>";
+                }
                 string += row * col;
                 string += "</div>\n";
             }

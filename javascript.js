@@ -1,38 +1,43 @@
 function createWithFlexbox(rows, cols, highlight) {
-    let string; // same variable name as before
-
+    let string;
     if (rows && cols) {
-        string = "<div class='flex-table'>\n"; // main container
+        string = "<div class='flex-table'>\n";
 
         for (let row = 1; row <= rows; row++) {
-            if (highlight && highlight === row) {
-                string += "<div class='row highlight'>\n";
-            } else {
-                string += "<div class='row'>\n";
-            }
+            string += highlight && highlight === row
+                ? "<div class='row highlight'>\n"
+                : "<div class='row'>\n";
 
             for (let col = 1; col <= cols; col++) {
-                if (highlight && highlight === col) {
-                    string += "<div class='cell highlight'>\n";
-                } else {
-                    string += "<div class='cell'>\n";
-                }
+                string += highlight && highlight === col
+                    ? "<div class='cell highlight'>"
+                    : "<div class='cell'>";
 
-                string += row * col; // same logic as before
-                string += "</div>\n"; // close .cell
+                string += row * col;
+                string += "</div>\n";
             }
 
-            string += "</div>\n"; // close .row
+            string += "</div>\n"; // end row
         }
 
-        string += "</div>\n"; // close .flex-table
+        string += "</div>\n"; // end flex-table
     } else {
-        string = "Provide some inputs";
+        string = 'Please enter both row and column numbers.';
     }
 
-    document.getElementById("output").innerHTML = string;
+    document.getElementById('output').innerHTML = string;
 }
 
+function getInputValueAsNumber(inputId) {
+    const element = document.getElementById(inputId);
+    if (element) {
+        const value = Number(element.value);
+        return value;
+    } else {
+        console.log(`Sorry, couldn’t find this ID:`, inputId);
+        return 0;
+    }
+}
 
 
 // function createWithHtmlTable(rows, cols, highlight) {

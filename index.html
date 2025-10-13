@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multiplication Table</title>
-
+<!--    <link rel="stylesheet" href="stylesheet.css" />-->
     <style>
         section {
             width: 70vw;
@@ -12,103 +12,110 @@
             margin: 0 auto;
             color: hotpink;
             border-radius: 75px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
             border: 5px skyblue dashed;
             background-color: lavenderblush;
+        }
 
-            & h1,
-            & h3 {
-                font-family: "Andale Mono", monospace;
-            }
+        h1, h3 {
+            font-family: "Andale Mono", monospace;
+        }
 
-            & .generate-box {
-                display: flex;
-                gap: 10px;
-                align-items: center;
+        .generate-box {
+            display: flex;
+            gap: 10px;
+        }
 
-                & button {
-                    background-color: hotpink;
-                    border: none;
-                    font-size: 300%;
-                    border-radius: 10px;
-                    padding: 0 20px;
-                    cursor: pointer;
-                }
+        .generate-box button {
+            background-color: hotpink;
+            border: none;
+            font-size: 300%;
+            border-radius: 10px;
+            padding: 0 20px;
+        }
 
-                & button:hover {
-                    background-color: deeppink;
-                }
+        .generate-box button:hover {
+            background-color: deeppink;
+        }
 
-                & button:active {
-                    background-color: darkseagreen;
-                    position: relative;
-                    top: 2px;
-                }
+        .generate-box button:active {
+            background-color: darkseagreen;
+            top: 2px;
+        }
 
-                & .inputs {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
+        .generate-box .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
 
-                    & label {
-                        display: flex;
-                        gap: 10px;
-                        justify-content: space-between;
-                        color: hotpink;
-                    }
-                }
-            }
+        .generate-box .inputs label {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            color: hotpink;
+        }
 
-            & #output {
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                overflow: auto;
-                max-width: 90vw;
-                max-height: 60vh;
+        #output {
+            display: flex;
+            flex-direction: column;
+            max-width: fit-content;
+            max-height: 60vh;
+            overflow: auto;
+            padding: 2px;
+            background-color: lavenderblush;
+            box-sizing: border-box;
 
-                & table,
-                & th,
-                & tr,
-                & td {
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                }
+        }
 
-                & tr:first-of-type,
-                & tr:last-of-type {
-                    background-color: lightblue;
-                }
+        .row {
+            display: flex;
+        }
 
-                & .highlight {
-                    background-color: mediumpurple;
-                    color: white;
-                }
+        .cell {
+            width: 22px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lavenderblush;
+            box-sizing: border-box;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+        }
 
-                & td {
-                    padding: 2px;
-                    text-align: center;
-                }
+        .row:last-child .cell {
+            border-bottom: 1px solid black;
+        }
 
-                & td:first-of-type,
-                & td:last-of-type {
-                    background-color: lightblue;
-                }
+        .row .cell:last-child {
+            border-right: 1px solid black;
+        }
 
-                & tr:hover {
-                    background-color: deepskyblue;
-                }
-            }
+        .row:first-child .cell,
+        .row:last-child .cell,
+        .row .cell:first-child,
+        .row .cell:last-child {
+            background-color: lightblue;
+        }
+
+        .cell.highlight:not(:first-child):not(:last-child),
+        .row.highlight .cell:not(:first-child):not(:last-child) {
+            background-color: mediumpurple;
+            color: white;
+        }
+        .row:hover .cell:not(.highlight):not(:first-child):not(:last-child) {
+            background-color: deepskyblue;
         }
     </style>
+
 </head>
 
 <body>
-<section>
+    <section class="container">
     <h1>Multiplication Table</h1>
     <h3>Create your own multiplication table that is rendered with an HTML table!</h3>
 
@@ -123,24 +130,24 @@
             </label>
 
             <label for="highlight">Highlight:
-                <input id="highlight" type="number" />
+                <input id="highlight" type="number" placeholder="Row or Col to highlight" />
             </label>
         </div>
 
-        <button id="generate" onclick="createWithFlexbox(getInputValueAsNumber('rows'),getInputValueAsNumber('cols'),getInputValueAsNumber('highlight'))">&#x1F422</button>
-
-
+        <button id="generate" onclick="createWithFlexbox(
+            getInputValueAsNumber('rows'),
+            getInputValueAsNumber('cols'),
+            getInputValueAsNumber('highlight')
+        )">🐢</button>
     </div>
 
+    <!-- moved output here -->
     <div id="output"></div>
 </section>
 
 <script src="javascript.js"></script>
 </body>
 </html>
-
-
-
 
 
 <!--<!DOCTYPE html>-->

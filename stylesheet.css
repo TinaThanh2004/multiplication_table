@@ -1,123 +1,97 @@
-/*section.container {*/
-/*    width: 70vw;*/
-/*    height: 100vh;*/
-/*    margin: 0 auto;*/
-/*    color: hotpink;*/
-/*    border-radius: 75px;*/
-
-
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    gap: 10px;*/
-/*    border: 5px skyblue dashed;*/
-/*    background-color: lavenderblush;*/
-
-/*    h1, h3 {*/
-/*        font-family: "Andale Mono", monospace;*/
-/*    }*/
-
-/*    .generate-box {*/
-/*        display: flex;*/
-/*        gap: 10px;*/
-
-/*        button {*/
-/*            background-color: hotpink;*/
-/*            border: none;*/
-/*            font-size: 300%;*/
-/*            border-radius: 10px;*/
-/*            padding: 0px 20px 0px 20px;*/
-/*        }*/
-
-/*        button:hover {*/
-/*            background-color:deeppink;*/
-/*            position: relative;*/
-/*        }*/
-
-/*        button:active {*/
-/*            background-color: darkseagreen; !* Changes on click *!*/
-/*            position: relative;*/
-/*            top: 2px; !* Creates a slight "pressed" effect *!*/
-
-/*        }*/
-
-/*    .inputs {*/
-/*            display: flex;*/
-/*            flex-direction: column;*/
-/*            gap: 5px;*/
-
-
-/*            label {*/
-/*                display: flex;*/
-/*                gap: 10px;*/
-/*                justify-content: space-between;*/
-/*                color: hotpink*/
-/*            }*/
-/*        }*/
-/*    }*/
-
-/*    #output {*/
-/*        overflow: scroll;*/
-/*        max-width: 90vw;*/
-/*        max-height: 60vh;*/
-
-/*        table, th, td {*/
-/*            border: 1px solid mediumpurple;*/
-/*            border-collapse: collapse;*/
-
-/*            .highlight {*/
-/*                background-color: mediumpurple;*/
-/*            }*/
-
-/*            td {*/
-/*                padding: 2px;*/
-/*                text-align: center;*/
-/*            }*/
-/*            td:first-of-type, td:last-of-type {*/
-/*                background-color: lavender;*/
-/*            }*/
-/*            tr:first-of-type, tr:last-of-type {*/
-/*                background-color: lavender;*/
-/*            }*/
-
-/*        }*/
-/*    }*/
-/*}*/
-#output {
+section {
+    width: 70vw;
+    height: 100vh;
+    margin: 0 auto;
+    color: hotpink;
+    border-radius: 75px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: auto;
-    max-width: 90vw;
-    max-height: 60vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 5px skyblue dashed;
+    background-color: lavenderblush;
 }
 
-.flex-table {
+h1, h3 {
+    font-family: "Andale Mono", monospace;
+}
+
+.generate-box {
     display: flex;
-    flex-direction: column; /* stack rows vertically */
-    gap: 2px;
+    gap: 10px;
 }
 
-.flex-table .row {
-    display: flex; /* each row lays out its cells horizontally */
-    gap: 2px;
+.generate-box button {
+    background-color: hotpink;
+    border: none;
+    font-size: 300%;
+    border-radius: 10px;
+    padding: 0 20px;
+    cursor: pointer;
 }
 
-.flex-table .cell {
-    width: 40px;
-    height: 40px;
+.generate-box button:hover {
+    background-color: deeppink;
+    position: relative;
+}
+
+.generate-box button:active {
+    background-color: darkseagreen;
+    position: relative;
+    top: 2px;
+}
+
+.generate-box .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.generate-box .inputs label {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: hotpink;
+}
+
+.row {
+    display: flex;
+
+}
+
+.cell {
+    width: 22px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    background-color: lavender;
+    outline: 1px solid black;
+    background-color: lavenderblush;
+
 }
 
-.flex-table .highlight {
+.cell.highlight,
+.row.highlight .cell {
     background-color: mediumpurple;
+    color: white;
+
+}
+
+.row:hover .cell {
+    background-color: deepskyblue;
     color: white;
 }
 
-.flex-table .row:hover {
-    background-color: deepskyblue;
+.row.highlight {
+    background-color: lightblue;
+}
+
+.row:first-child .cell,
+.row:last-child .cell {
+    background-color: lightblue;
+}
+
+.row .cell:first-child,
+.row .cell:last-child {
+    background-color: lightblue;
 }

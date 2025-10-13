@@ -12,5 +12,5 @@ My style is all about **cute, playful illustrations** and finding beauty in the 
 ## 🎯 What I’m Learning
 - Using GitHub
 - Building or I guess coding a website aka multiplication table online
-- Javascript
+- Javascript..
 

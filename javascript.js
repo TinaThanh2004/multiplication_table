@@ -1,42 +1,33 @@
-function createWithFlexbox(rows, cols, highlight) {
-    let string;
-    if (rows && cols) {
-        string = "<div class='flex-table'>\n";
-
-        for (let row = 1; row <= rows; row++) {
-            if (highlight && highlight === row) {
-                string += "<div class='row highlight'>\n";
-            } else {
-                string += "<div class='row'>\n";
-            }
-
-            for (let col = 1; col <= cols; col++) {
-                if (highlight && highlight === col) {
-                    string += "<div class='cell highlight'>";
-                } else {
-                    string += "<div class='cell'>";
-                }
-                string += row * col;
-                string += "</div>\n";
-            }
-
-            string += "</div>\n"; // end row
-        }
-
-        string += "</div>\n"; // end flex-table
-    } else {
-        string = 'Please enter both row and column numbers.';
-    }
-
-    document.getElementById('output').innerHTML = string;
+function getRowsDesired() {
+    return parseInt(document.getElementById("rows").value)
 }
 
-function getInputValueAsNumber(inputId) {
-    const element = document.getElementById(inputId);
-    if (element) {
-        return Number(element.value);
-    } else {
-        console.log(`Sorry, couldn’t find this ID:`, inputId);
-        return 0;
-    }
+function getColumnsDesired() {
+    return parseInt(document.getElementById("cols").value)
+}
+
+function createWithFlexbox(rows, cols) {
+    let string = ''
+
+    // first do-while loop to build the flex'd rows
+    let row = 1
+    do {
+        string += "<div class='row'>"
+        string += row
+
+        // second do-while loop to build the flex'd columns
+        let col = 1
+        do {
+            string += "<div class='col'>"
+            string += row * col
+            string += "</div>"
+
+            col = col + 1
+        } while (col <= cols)
+        string += "</div>\n"
+
+        row = row + 1;
+    } while (row <= rows)
+
+    document.getElementById("output").innerHTML = string
 }

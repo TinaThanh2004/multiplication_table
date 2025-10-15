@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
     <title>Multiplication Table</title>
-    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-
 <body>
-    <section class="container">
-    <h1>Multiplication Table</h1>
-    <h3>Create your own multiplication table that is rendered with an HTML table!</h3>
+
+<section class="container">
+    <h1>Multiplication Table Project</h1>
+    <h3>Create your own multiplication table that is rendered with flexbox!</h3>
 
     <div class="generate-box">
         <div class="inputs">
-            <label for="rows" class="columns-of-rows">Rows:
-                <input id="rows" type="number" value="10" placeholder="How many rows?" />
+            <label for="rows">Rows:
+                <input id="rows" type="number" value="10" placeholder="How many rows?"/>
             </label>
 
-            <label for="cols" class="rows-of-columns">Columns:
-                <input id="cols" type="number" value="10" placeholder="How many columns?" />
-            </label>
-
-            <label for="highlight">Highlight:
-                <input id="highlight" type="number" placeholder="Row or Col to highlight" />
+            <label for="cols">Columns:
+                <input id="cols" type="number" value="10" placeholder="How many cols?"/>
             </label>
         </div>
 
-        <button id="generate" onclick="createWithFlexbox(getInputValueAsNumber('rows'), getInputValueAsNumber('cols'), getInputValueAsNumber('highlight'))">🐢</button>
+        <button id="generate" onclick="createWithFlexbox(getRowsDesired(), getColumnsDesired())">🐢</button>
     </div>
 
     <div id="output"></div>
-
 </section>
 
-<script src="javascript.js"></script>
 </body>
+<script src="javascript.js"></script>
 </html>

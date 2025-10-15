@@ -1,33 +1,44 @@
-function getRowsDesired() {
-    return parseInt(document.getElementById("rows").value)
+function getInputValueAsNumber(inputId) {
+    const input = document.getElementById(inputId);
+    if (input) {
+        return Number(input.value)
+    } else {
+        console.log("Could not find: ", inputId);
+        return 0;
+    }
 }
 
-function getColumnsDesired() {
-    return parseInt(document.getElementById("cols").value)
-}
-
-function createWithFlexbox(rows, cols) {
+function createWithFlexbox(rows, cols, highlight) {
     let string = ''
 
-    // first do-while loop to build the flex'd rows
-    let row = 1
-    do {
-        string += "<div class='row'>"
-        string += row
+    // first do-while loop to build the flex rows
+    if (rows && cols) {
+        string = "<div class='flex-table'>\n";
 
-        // second do-while loop to build the flex'd columns
-        let col = 1
-        do {
-            string += "<div class='col'>"
-            string += row * col
-            string += "</div>"
+        for (let row = 1; row <= rows; row++) {
+            if (highlight && highlight === row) {
+                string += "<div class='row highlight'>\n";
+            } else {
+                string += "<div class='row'>\n";
+            }
 
-            col = col + 1
-        } while (col <= cols)
-        string += "</div>\n"
+            for (let col = 1; col <= cols; col++) {
+                if (highlight && highlight === col) {
+                    string += "<div class='cell highlight'>";
+                } else {
+                    string += "<div class='cell'>";
+                }
+                string += row * col;
+                string += "</div>\n";
+            }
 
-        row = row + 1;
-    } while (row <= rows)
+            string += "</div>\n"; // end row
+        }
 
-    document.getElementById("output").innerHTML = string
+        string += "</div>\n"; // end flex-table
+    } else {
+        string = 'Please enter both row and column numbers.';
+    }
+
+    document.getElementById('output').innerHTML = string;
 }

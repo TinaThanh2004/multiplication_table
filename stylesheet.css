@@ -15,6 +15,31 @@ section.container {
         font-family: "Andale Mono", monospace;
     }
 
+    div.flex-table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            &:hover {
+                color: black;
+            }
+        }
+
+        .cell {
+            text-align: center;
+            padding: 4px;
+            width: 1.25em;
+        }
+
+        .highlight {
+            background-color: red;
+        }
+    }
+
     .generate-box {
         display: flex;
         gap: 10px;
@@ -53,6 +78,7 @@ section.container {
 
         }
     }
+
 
 
     #output {

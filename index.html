@@ -21,9 +21,13 @@
             <label for="cols">Columns:
                 <input id="cols" type="number" value="10" placeholder="How many cols?"/>
             </label>
+
+            <label for="highlight">Highlight:
+                <input id="highlight" type="number" placeholder="highlight"/>
+            </label>
         </div>
 
-        <button id="generate" onclick="createWithFlexbox(getRowsDesired(), getColumnsDesired())">🐢</button>
+        <button id="generate" onclick="createWithFlexbox(getInputValueAsNumber('rows'), getInputValueAsNumber('cols'), getInputValueAsNumber('highlight'))">🐢</button>
     </div>
 
     <div id="output"></div>

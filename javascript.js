@@ -34,8 +34,7 @@ function createWithFlexbox(rows, cols, highlight) {
 function getInputValueAsNumber(inputId) {
     const element = document.getElementById(inputId);
     if (element) {
-        const value = Number(element.value);
-        return value;
+        return Number(element.value);
     } else {
         console.log(`Sorry, couldn’t find this ID:`, inputId);
         return 0;

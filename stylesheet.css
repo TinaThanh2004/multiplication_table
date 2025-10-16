@@ -2,10 +2,10 @@ section.container {
     width: 70vw;
     height: 100vh;
     margin: 0 auto;
-    color: hotpink;
+    color: forestgreen;
     border-radius: 75px;
-    border: 5px skyblue dashed;
-    background-color: lavenderblush;
+    border: 5px seagreen dashed;
+    background-color: lightgoldenrodyellow;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,11 +22,12 @@ section.container {
         align-content: space-between;
 
         .row {
+            &:hover {
+                color: deeppink;
+            }
             display: flex;
             justify-content: space-between;
-            &:hover {
-                color: black;
-            }
+
         }
 
         .cell {
@@ -36,7 +37,7 @@ section.container {
         }
 
         .highlight {
-            background-color: red;
+            background-color: darkseagreen;
         }
     }
 
@@ -57,16 +58,16 @@ section.container {
             }
         }
         button {
-            background-color: hotpink;
+            background-color: darkseagreen;
             border: none;
             font-size: 300%;
             border-radius: 10px;
             padding: 0 20px;
             cursor: pointer;
-            box-shadow: 2px 2px 5px lightslategray;
+            box-shadow: 2px 2px 5px darkolivegreen;
 
             &:hover {
-                background-color: deeppink;
+                background-color: darkslategrey;
                 position: relative;
             }
 
@@ -82,11 +83,10 @@ section.container {
 
 
     #output {
-        border: 1px solid black;
         display: flex;
         flex-direction: column;
         gap: 5px;
-        box-shadow: 2px 2px 5px lightslategray;
+        box-shadow: 4px 4px 10px darkolivegreen;
 
 
         .row {
@@ -96,20 +96,6 @@ section.container {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
